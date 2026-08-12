@@ -1,0 +1,121 @@
+image_record_id,sku,image_url,image_role,sort_order,alt_text,width_px,height_px,is_active,updated_at
+IMG-000001,SKU-00001,https://cdn.example-retail.test/products/sku-00001/main.jpg,PRIMARY,1,Wireless Earbuds in Black,1200,1200,true,2026-08-10T14:00:00.000Z
+IMG-000002,SKU-00002,https://cdn.example-retail.test/products/sku-00002/main.jpg,PRIMARY,1,Ceramic Planter in White,1200,1200,true,2026-08-09T14:00:00.000Z
+IMG-000003,SKU-00003,https://cdn.example-retail.test/products/sku-00003/main.jpg,PRIMARY,1,Dry Bag in Navy,1200,1200,true,2026-08-08T14:00:00.000Z
+IMG-000004,SKU-00004,https://cdn.example-retail.test/products/sku-00004/main.jpg,PRIMARY,1,Everyday Socks in Forest Green,1200,1200,true,2026-08-07T14:00:00.000Z
+IMG-000005,SKU-00005,https://cdn.example-retail.test/products/sku-00005/detail-1.jpg,DETAIL,2,Mixing Bowl Set in Sand,1200,1200,true,2026-08-06T14:00:00.000Z
+IMG-000006,SKU-00006,https://cdn.example-retail.test/products/sku-00006/main.jpg,PRIMARY,1,Resistance Bands in Red,1200,1200,true,2026-08-05T14:00:00.000Z
+IMG-000007,SKU-00007,https://cdn.example-retail.test/products/sku-00007/main.jpg,PRIMARY,1,USB-C Hub in Slate,1200,1200,true,2026-08-04T14:00:00.000Z
+IMG-000008,SKU-00008,https://cdn.example-retail.test/products/sku-00008/main.jpg,PRIMARY,1,LED Desk Lamp in Natural,1200,1200,true,2026-08-03T14:00:00.000Z
+IMG-000009,SKU-00009,https://cdn.example-retail.test/products/sku-00009/main.jpg,PRIMARY,1,Hiking Poles in Black,1200,1200,true,2026-08-02T14:00:00.000Z
+IMG-000010,SKU-00010,https://cdn.example-retail.test/products/sku-00010/detail-1.jpg,DETAIL,2,Rain Shell in White,1200,1200,true,2026-08-01T14:00:00.000Z
+IMG-000011,SKU-00011,https://cdn.example-retail.test/products/sku-00011/main.jpg,PRIMARY,1,Chef Knife in Navy,1200,1200,true,2026-07-31T14:00:00.000Z
+IMG-000012,SKU-00012,https://cdn.example-retail.test/products/sku-00012/main.jpg,PRIMARY,1,Yoga Mat in Forest Green,1200,1200,true,2026-07-30T14:00:00.000Z
+IMG-000013,SKU-00013,https://cdn.example-retail.test/products/sku-00013/main.jpg,PRIMARY,1,,1200,1200,true,2026-07-29T14:00:00.000Z
+IMG-000014,SKU-00014,https://cdn.example-retail.test/products/sku-00014/main.jpg,PRIMARY,1,Storage Basket in Red,1200,1200,true,2026-07-28T14:00:00.000Z
+IMG-000015,SKU-00015,https://cdn.example-retail.test/products/sku-00015/detail-1.jpg,DETAIL,2,Picnic Blanket in Slate,1200,1200,true,2026-07-27T14:00:00.000Z
+IMG-000016,SKU-00016,https://cdn.example-retail.test/products/sku-00016/main.jpg,PRIMARY,1,Classic Hoodie in Natural,1200,1200,true,2026-07-26T14:00:00.000Z
+IMG-000017,SKU-00017,https://cdn.example-retail.test/products/sku-00017/main.jpg,PRIMARY,1,Glass Carafe in Black,1200,1200,true,2026-07-25T14:00:00.000Z
+IMG-000018,SKU-00018,https://cdn.example-retail.test/products/sku-00018/main.jpg,PRIMARY,1,Foam Roller in White,1200,1200,true,2026-07-24T14:00:00.000Z
+IMG-000019,SKU-00019,https://cdn.example-retail.test/products/sku-00019/main.jpg,PRIMARY,1,Portable Charger in Navy,1200,1200,true,2026-07-23T14:00:00.000Z
+IMG-000020,SKU-00020,https://cdn.example-retail.test/products/sku-00020/detail-1.jpg,DETAIL,2,Cotton Towel Set in Forest Green,1200,1200,true,2026-07-22T14:00:00.000Z
+IMG-000021,SKU-00021,,PRIMARY,1,Trail Bottle in Sand,1200,1200,true,2026-07-21T14:00:00.000Z
+IMG-000022,SKU-00022,https://cdn.example-retail.test/products/sku-00022/main.jpg,PRIMARY,1,Merino Tee in Red,1200,1200,true,2026-07-20T14:00:00.000Z
+IMG-000023,SKU-00023,https://cdn.example-retail.test/products/sku-00023/main.jpg,PRIMARY,1,Bamboo Board in Slate,1200,1200,true,2026-07-19T14:00:00.000Z
+IMG-000024,SKU-00024,https://cdn.example-retail.test/products/sku-00024/main.jpg,PRIMARY,1,Training Gloves in Natural,1200,1200,true,2026-07-18T14:00:00.000Z
+IMG-000025,SKU-00025,https://cdn.example-retail.test/products/sku-00025/detail-1.jpg,DETAIL,2,Smart Bulb in Black,1200,1200,true,2026-07-17T14:00:00.000Z
+IMG-000026,SKU-00026,https://cdn.example-retail.test/products/sku-00026/main.jpg,PRIMARY,1,,1200,1200,true,2026-07-16T14:00:00.000Z
+IMG-000027,SKU-00027,https://cdn.example-retail.test/products/sku-00027/main.jpg,PRIMARY,1,Camping Lantern in Navy,1200,1200,true,2026-07-15T14:00:00.000Z
+IMG-000028,SKU-00028,https://cdn.example-retail.test/products/sku-00028/main.jpg,PRIMARY,1,Canvas Cap in Forest Green,1200,1200,true,2026-07-14T14:00:00.000Z
+IMG-000029,SKU-00029,https://cdn.example-retail.test/products/sku-00029/main.jpg,PRIMARY,1,Coffee Grinder in Sand,1200,1200,true,2026-07-13T14:00:00.000Z
+IMG-000030,SKU-00030,https://cdn.example-retail.test/products/sku-00030/detail-1.jpg,DETAIL,2,Jump Rope in Red,1200,1200,true,2026-07-12T14:00:00.000Z
+IMG-000031,SKU-00031,https://cdn.example-retail.test/products/sku-00031/main.jpg,PRIMARY,1,Wireless Earbuds in Slate,1200,1200,true,2026-07-11T14:00:00.000Z
+IMG-000032,SKU-00032,https://cdn.example-retail.test/products/sku-00032/main.jpg,PRIMARY,1,Ceramic Planter in Natural,1200,1200,true,2026-07-10T14:00:00.000Z
+IMG-000033,SKU-00033,https://cdn.example-retail.test/products/sku-00033/main.jpg,PRIMARY,1,Dry Bag in Black,1200,1200,true,2026-07-09T14:00:00.000Z
+IMG-000034,SKU-00034,https://cdn.example-retail.test/products/sku-00034/main.jpg,PRIMARY,1,Everyday Socks in White,1200,1200,true,2026-07-08T14:00:00.000Z
+IMG-000035,SKU-00035,https://cdn.example-retail.test/products/sku-00035/detail-1.jpg,DETAIL,2,Mixing Bowl Set in Navy,1200,1200,true,2026-07-07T14:00:00.000Z
+IMG-000036,SKU-00036,https://cdn.example-retail.test/products/sku-00036/main.jpg,PRIMARY,1,Resistance Bands in Forest Green,1200,1200,true,2026-07-06T14:00:00.000Z
+IMG-000037,SKU-00037,https://cdn.example-retail.test/products/sku-00037/main.jpg,PRIMARY,1,USB-C Hub in Sand,1200,1200,0,2026-07-05T14:00:00.000Z
+IMG-000038,SKU-00038,https://cdn.example-retail.test/products/sku-00038/main.jpg,PRIMARY,1,LED Desk Lamp in Red,1200,1200,true,2026-07-04T14:00:00.000Z
+IMG-000039,SKU-00039,https://cdn.example-retail.test/products/sku-00039/main.jpg,PRIMARY,1,,1200,1200,true,2026-07-03T14:00:00.000Z
+IMG-000040,SKU-00040,https://cdn.example-retail.test/products/sku-00040/detail-1.jpg,DETAIL,2,Rain Shell in Natural,1200,1200,true,2026-07-02T14:00:00.000Z
+IMG-000041,SKU-00041,https://cdn.example-retail.test/products/sku-00041/main.jpg,PRIMARY,1,Chef Knife in Black,1200,1200,true,2026-07-01T14:00:00.000Z
+IMG-000042,SKU-00042,,PRIMARY,1,Yoga Mat in White,1200,1200,true,2026-06-30T14:00:00.000Z
+IMG-000043,SKU-00043,https://cdn.example-retail.test/products/sku-00043/main.jpg,PRIMARY,1,Mechanical Keyboard in Navy,1200,1200,true,2026-06-29T14:00:00.000Z
+IMG-000044,SKU-00044,https://cdn.example-retail.test/products/sku-00044/main.jpg,PRIMARY,1,Storage Basket in Forest Green,1200,1200,true,2026-06-28T14:00:00.000Z
+IMG-000045,SKU-00045,https://cdn.example-retail.test/products/sku-00045/detail-1.jpg,DETAIL,2,Picnic Blanket in Sand,1200,1200,true,2026-06-27T14:00:00.000Z
+IMG-000046,SKU-00046,https://cdn.example-retail.test/products/sku-00046/main.jpg,PRIMARY,1,Classic Hoodie in Red,1200,1200,true,2026-06-26T14:00:00.000Z
+IMG-000047,SKU-00047,https://cdn.example-retail.test/products/sku-00047/main.jpg,PRIMARY,1,Glass Carafe in Slate,1200,1200,true,2026-06-25T14:00:00.000Z
+IMG-000048,SKU-00048,https://cdn.example-retail.test/products/sku-00048/main.jpg,PRIMARY,1,Foam Roller in Natural,1200,1200,true,2026-06-24T14:00:00.000Z
+IMG-000049,SKU-00049,https://cdn.example-retail.test/products/sku-00049/main.jpg,PRIMARY,1,Portable Charger in Black,1200,1200,true,2026-06-23T14:00:00.000Z
+IMG-000050,SKU-00050,https://cdn.example-retail.test/products/sku-00050/detail-1.jpg,DETAIL,2,Cotton Towel Set in White,1200,1200,true,2026-06-22T14:00:00.000Z
+IMG-000051,SKU-00051,https://cdn.example-retail.test/products/sku-00051/main.jpg,PRIMARY,1,Trail Bottle in Navy,1200,1200,true,2026-06-21T14:00:00.000Z
+IMG-000052,SKU-00052,https://cdn.example-retail.test/products/sku-00052/main.jpg,PRIMARY,1,,1200,1200,true,2026-06-20T14:00:00.000Z
+IMG-000053,SKU-00053,https://cdn.example-retail.test/products/sku-00053/main.jpg,PRIMARY,1,Bamboo Board in Sand,1200,1200,true,2026-06-19T14:00:00.000Z
+IMG-000054,SKU-00054,https://cdn.example-retail.test/products/sku-00054/main.jpg,PRIMARY,1,Training Gloves in Red,1200,1200,true,2026-06-18T14:00:00.000Z
+IMG-000055,SKU-00055,https://cdn.example-retail.test/products/sku-00055/detail-1.jpg,DETAIL,2,Smart Bulb in Slate,1200,1200,true,2026-08-11T14:00:00.000Z
+IMG-000056,SKU-00056,https://cdn.example-retail.test/products/sku-00056/main.jpg,PRIMARY,1,Linen Throw in Natural,1200,1200,true,2026-08-10T14:00:00.000Z
+IMG-000057,SKU-00057,https://cdn.example-retail.test/products/sku-00057/main.jpg,PRIMARY,1,Camping Lantern in Black,1200,1200,true,2026-08-09T14:00:00.000Z
+IMG-000058,SKU-00058,htp://broken-url/image.jpg,PRIMARY,1,Canvas Cap in White,1200,1200,true,2026-08-08T14:00:00.000Z
+IMG-000059,SKU-00059,https://cdn.example-retail.test/products/sku-00059/main.jpg,PRIMARY,1,Coffee Grinder in Navy,1200,1200,true,2026-08-07T14:00:00.000Z
+IMG-000060,SKU-00060,https://cdn.example-retail.test/products/sku-00060/detail-1.jpg,DETAIL,2,Jump Rope in Forest Green,1200,1200,true,2026-08-06T14:00:00.000Z
+IMG-000061,SKU-00061,https://cdn.example-retail.test/products/sku-00061/main.jpg,PRIMARY,1,Wireless Earbuds in Sand,1200,1200,true,2026-08-05T14:00:00.000Z
+IMG-000062,SKU-00062,https://cdn.example-retail.test/products/sku-00062/main.jpg,PRIMARY,1,Ceramic Planter in Red,1200,1200,true,2026-08-04T14:00:00.000Z
+IMG-000063,SKU-00063,,PRIMARY,1,Dry Bag in Slate,1200,1200,true,2026-08-03T14:00:00.000Z
+IMG-000064,SKU-00064,https://cdn.example-retail.test/products/sku-00064/main.jpg,PRIMARY,1,Everyday Socks in Natural,1200,1200,true,2026-08-02T14:00:00.000Z
+IMG-000065,SKU-00065,https://cdn.example-retail.test/products/sku-00065/detail-1.jpg,DETAIL,2,,1200,1200,true,2026-08-01T14:00:00.000Z
+IMG-000066,SKU-00066,https://cdn.example-retail.test/products/sku-00066/main.jpg,PRIMARY,1,Resistance Bands in White,1200,1200,true,2026-07-31T14:00:00.000Z
+IMG-000067,SKU-00067,https://cdn.example-retail.test/products/sku-00067/main.jpg,PRIMARY,1,USB-C Hub in Navy,1200,1200,true,2026-07-30T14:00:00.000Z
+IMG-000068,SKU-00068,https://cdn.example-retail.test/products/sku-00068/main.jpg,PRIMARY,1,LED Desk Lamp in Forest Green,1200,1200,true,2026-07-29T14:00:00.000Z
+IMG-000069,SKU-00069,https://cdn.example-retail.test/products/sku-00069/main.jpg,PRIMARY,1,Hiking Poles in Sand,1200,1200,true,2026-07-28T14:00:00.000Z
+IMG-000070,SKU-00070,https://cdn.example-retail.test/products/sku-00070/detail-1.jpg,DETAIL,2,Rain Shell in Red,1200,1200,true,2026-07-27T14:00:00.000Z
+IMG-000071,SKU-00071,https://cdn.example-retail.test/products/sku-00071/main.jpg,PRIMARY,1,Chef Knife in Slate,1200,1200,true,2026-07-26T14:00:00.000Z
+IMG-000072,SKU-00072,https://cdn.example-retail.test/products/sku-00072/main.jpg,PRIMARY,1,Yoga Mat in Natural,1200,1200,true,2026-07-25T14:00:00.000Z
+IMG-000073,SKU-00073,https://cdn.example-retail.test/products/sku-00073/main.jpg,PRIMARY,1,Mechanical Keyboard in Black,1200,1200,true,2026-07-24T14:00:00.000Z
+IMG-000074,SKU-00074,https://cdn.example-retail.test/products/sku-00074/main.jpg,PRIMARY,1,Storage Basket in White,1200,1200,0,2026-07-23T14:00:00.000Z
+IMG-000075,SKU-00075,https://cdn.example-retail.test/products/sku-00075/detail-1.jpg,DETAIL,2,Picnic Blanket in Navy,1200,1200,true,2026-07-22T14:00:00.000Z
+IMG-000076,SKU-00076,https://cdn.example-retail.test/products/sku-00076/main.jpg,PRIMARY,1,Classic Hoodie in Forest Green,1200,1200,true,2026-07-21T14:00:00.000Z
+IMG-000077,SKU-00077,https://cdn.example-retail.test/products/sku-00077/main.jpg,PRIMARY,1,Glass Carafe in Sand,1200,1200,true,2026-07-20T14:00:00.000Z
+IMG-000078,SKU-00078,https://cdn.example-retail.test/products/sku-00078/main.jpg,PRIMARY,1,,1200,1200,true,2026-07-19T14:00:00.000Z
+IMG-000079,SKU-00079,https://cdn.example-retail.test/products/sku-00079/main.jpg,PRIMARY,1,Portable Charger in Slate,1200,1200,true,2026-07-18T14:00:00.000Z
+IMG-000080,SKU-00080,https://cdn.example-retail.test/products/sku-00080/detail-1.jpg,DETAIL,2,Cotton Towel Set in Natural,1200,1200,true,2026-07-17T14:00:00.000Z
+IMG-000081,SKU-00081,https://cdn.example-retail.test/products/sku-00081/main.jpg,PRIMARY,1,Trail Bottle in Black,1200,1200,true,2026-07-16T14:00:00.000Z
+IMG-000082,SKU-00082,https://cdn.example-retail.test/products/sku-00082/main.jpg,PRIMARY,1,Merino Tee in White,1200,1200,true,2026-07-15T14:00:00.000Z
+IMG-000083,SKU-00083,https://cdn.example-retail.test/products/sku-00083/main.jpg,PRIMARY,1,Bamboo Board in Navy,1200,1200,true,2026-07-14T14:00:00.000Z
+IMG-000084,SKU-00084,,PRIMARY,1,Training Gloves in Forest Green,1200,1200,true,2026-07-13T14:00:00.000Z
+IMG-000085,SKU-00085,https://cdn.example-retail.test/products/sku-00085/detail-1.jpg,DETAIL,2,Smart Bulb in Sand,1200,1200,true,2026-07-12T14:00:00.000Z
+IMG-000086,SKU-00086,https://cdn.example-retail.test/products/sku-00086/main.jpg,PRIMARY,1,Linen Throw in Red,1200,1200,true,2026-07-11T14:00:00.000Z
+IMG-000087,SKU-00087,https://cdn.example-retail.test/products/sku-00087/main.jpg,PRIMARY,1,Camping Lantern in Slate,1200,1200,true,2026-07-10T14:00:00.000Z
+IMG-000088,SKU-00088,https://cdn.example-retail.test/products/sku-00088/main.jpg,PRIMARY,1,Canvas Cap in Natural,1200,1200,true,2026-07-09T14:00:00.000Z
+IMG-000089,SKU-00089,https://cdn.example-retail.test/products/sku-00089/main.jpg,PRIMARY,1,Coffee Grinder in Black,1200,1200,true,2026-07-08T14:00:00.000Z
+IMG-000090,SKU-00090,https://cdn.example-retail.test/products/sku-00090/detail-1.jpg,DETAIL,2,Jump Rope in White,1200,1200,true,2026-07-07T14:00:00.000Z
+IMG-000091,SKU-00091,https://cdn.example-retail.test/products/sku-00091/main.jpg,PRIMARY,1,,0,0,true,2026-07-06T14:00:00.000Z
+IMG-000092,SKU-00092,https://cdn.example-retail.test/products/sku-00092/main.jpg,PRIMARY,1,Ceramic Planter in Forest Green,1200,1200,true,2026-07-05T14:00:00.000Z
+IMG-000093,SKU-00093,https://cdn.example-retail.test/products/sku-00093/main.jpg,PRIMARY,1,Dry Bag in Sand,1200,1200,true,2026-07-04T14:00:00.000Z
+IMG-000094,SKU-00094,https://cdn.example-retail.test/products/sku-00094/main.jpg,PRIMARY,1,Everyday Socks in Red,1200,1200,true,2026-07-03T14:00:00.000Z
+IMG-000095,SKU-00095,https://cdn.example-retail.test/products/sku-00095/detail-1.jpg,DETAIL,2,Mixing Bowl Set in Slate,1200,1200,true,2026-07-02T14:00:00.000Z
+IMG-000096,SKU-00096,https://cdn.example-retail.test/products/sku-00096/main.jpg,PRIMARY,1,Resistance Bands in Natural,1200,1200,true,2026-07-01T14:00:00.000Z
+IMG-000097,SKU-00097,https://cdn.example-retail.test/products/sku-00097/main.jpg,PRIMARY,1,USB-C Hub in Black,1200,1200,true,2026-06-30T14:00:00.000Z
+IMG-000098,SKU-00098,https://cdn.example-retail.test/products/sku-00098/main.jpg,PRIMARY,1,LED Desk Lamp in White,1200,1200,true,2026-06-29T14:00:00.000Z
+IMG-000099,SKU-00099,https://cdn.example-retail.test/products/sku-00099/main.jpg,PRIMARY,1,Hiking Poles in Navy,1200,1200,true,2026-06-28T14:00:00.000Z
+IMG-000100,SKU-00100,https://cdn.example-retail.test/products/sku-00100/detail-1.jpg,DETAIL,2,Rain Shell in Forest Green,1200,1200,true,2026-06-27T14:00:00.000Z
+IMG-000101,SKU-00101,https://cdn.example-retail.test/products/sku-00101/main.jpg,PRIMARY,1,Chef Knife in Sand,1200,1200,true,2026-06-26T14:00:00.000Z
+IMG-000102,SKU-00102,https://cdn.example-retail.test/products/sku-00102/main.jpg,PRIMARY,1,Yoga Mat in Red,1200,1200,true,2026-06-25T14:00:00.000Z
+IMG-000103,SKU-00103,https://cdn.example-retail.test/products/sku-00103/main.jpg,PRIMARY,1,Mechanical Keyboard in Slate,1200,1200,true,2026-06-24T14:00:00.000Z
+IMG-000104,SKU-00104,https://cdn.example-retail.test/products/sku-00104/main.jpg,PRIMARY,1,,1200,1200,true,2026-06-23T14:00:00.000Z
+IMG-000105,SKU-00105,,DETAIL,2,Picnic Blanket in Black,1200,1200,true,2026-06-22T14:00:00.000Z
+IMG-000106,SKU-00106,https://cdn.example-retail.test/products/sku-00106/main.jpg,PRIMARY,1,Classic Hoodie in White,1200,1200,true,2026-06-21T14:00:00.000Z
+IMG-000107,SKU-00107,https://cdn.example-retail.test/products/sku-00107/main.jpg,PRIMARY,1,Glass Carafe in Navy,1200,1200,true,2026-06-20T14:00:00.000Z
+IMG-000108,SKU-00108,https://cdn.example-retail.test/products/sku-00108/main.jpg,PRIMARY,1,Foam Roller in Forest Green,1200,1200,true,2026-06-19T14:00:00.000Z
+IMG-000109,SKU-00109,https://cdn.example-retail.test/products/sku-00109/main.jpg,PRIMARY,1,Portable Charger in Sand,1200,1200,true,2026-06-18T14:00:00.000Z
+IMG-000110,SKU-00109,https://cdn.example-retail.test/products/sku-00110/detail-1.jpg,PRIMARY,1,Cotton Towel Set in Red,1200,1200,true,2026-08-11T14:00:00.000Z
+IMG-000111,SKU-00111,https://cdn.example-retail.test/products/sku-00111/main.jpg,PRIMARY,1,Trail Bottle in Slate,1200,1200,0,2026-08-10T14:00:00.000Z
+IMG-000112,SKU-00112,https://cdn.example-retail.test/products/sku-00112/main.jpg,PRIMARY,1,Merino Tee in Natural,1200,1200,true,2026-08-09T14:00:00.000Z
+IMG-000113,SKU-00113,https://cdn.example-retail.test/products/sku-00113/main.jpg,PRIMARY,1,Bamboo Board in Black,1200,1200,true,2026-08-08T14:00:00.000Z
+IMG-000114,SKU-00114,https://cdn.example-retail.test/products/sku-00114/main.jpg,PRIMARY,1,Training Gloves in White,1200,1200,true,2026-08-07T14:00:00.000Z
+IMG-000115,SKU-00115,https://cdn.example-retail.test/products/sku-00115/detail-1.jpg,DETAIL,2,Smart Bulb in Navy,1200,1200,true,2026-08-06T14:00:00.000Z
+IMG-000116,SKU-00001,https://cdn.example-retail.test/products/sku-00001/main.jpg,PRIMARY,1,Wireless Earbuds in Black,1200,1200,true,2026-08-05T14:00:00.000Z
+IMG-000117,SKU-00888,https://cdn.example-retail.test/products/sku-00888/main.jpg,PRIMARY,1,,1200,1200,true,2026-08-04T14:00:00.000Z
+IMG-000118,SKU-00003,https://cdn.example-retail.test/products/sku-00003/main.jpg,PRIMARY,1,Dry Bag in Navy,1200,1200,true,2026-08-03T14:00:00.000Z
+IMG-000119,SKU-00004,https://cdn.example-retail.test/products/sku-00004/main.jpg,PRIMARY,1,Everyday Socks in Forest Green,1200,1200,true,2026-08-02T14:00:00.000Z
+IMG-000120,SKU-00005,https://cdn.example-retail.test/products/sku-00005/detail-1.jpg,DETAIL,2,Mixing Bowl Set in Sand,1200,1200,true,2026-08-01T14:00:00.000Z

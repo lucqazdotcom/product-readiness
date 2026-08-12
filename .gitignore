@@ -1,0 +1,48 @@
+# Compiled binaries
+/bin/
+/dist/
+product-readiness
+*.exe
+*.out
+*.test
+
+# Go build and test artifacts
+*.prof
+coverage.out
+coverage.html
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+
+# Local application data
+/data/*
+!/data/.gitkeep
+
+# Local databases
+*.db
+*.db-shm
+*.db-wal
+*.sqlite
+*.sqlite3
+
+# Logs
+*.log
+/logs/
+
+# Temporary files
+/tmp/
+*.tmp
+
+# Docker overrides
+compose.override.yaml
+docker-compose.override.yml
+
+# IDEs and editors
+*.swp
+*.swo
+*~
+
+# macOS
+.DS_Store
