@@ -8,7 +8,7 @@ import (
 )
 
 type ProductInput struct {
-	UPC            string
+	SKU            string
 	Name           string
 	Brand          string
 	Category       string
@@ -56,7 +56,7 @@ func Products(path string) ([]ProductInput, error) {
 		}
 
 		product := ProductInput{
-			UPC:            row[0],
+			SKU:            row[0],
 			Name:           row[1],
 			Brand:          row[2],
 			Category:       row[3],
