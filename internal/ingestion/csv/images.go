@@ -3,7 +3,6 @@ package csv
 import (
 	"encoding/csv"
 	"fmt"
-	"log"
 	"os"
 )
 
@@ -23,7 +22,7 @@ type ImageInput struct {
 func Images(path string) ([]ImageInput, error) {
 	file, err := os.Open(path)
 	if err != nil {
-		log.Fatal("Error opening file: %w", err)
+		return nil, fmt.Errorf("open image csv: %w", err)
 	}
 	defer file.Close()
 
@@ -31,7 +30,7 @@ func Images(path string) ([]ImageInput, error) {
 
 	records, err := reader.ReadAll()
 	if err != nil {
-		log.Fatal("Error reading csv: %w", err)
+		return nil, fmt.Errorf("read image csv: %w", err)
 	}
 
 	images := make([]ImageInput, 0, len(records))

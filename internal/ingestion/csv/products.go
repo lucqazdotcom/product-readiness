@@ -3,7 +3,6 @@ package csv
 import (
 	"encoding/csv"
 	"fmt"
-	"log"
 	"os"
 )
 
@@ -29,7 +28,7 @@ func Products(path string) ([]ProductInput, error) {
 
 	file, err := os.Open(path)
 	if err != nil {
-		log.Fatal("Error opening file: %w", err)
+		return nil, fmt.Errorf("open products csv: %w", err)
 	}
 	defer file.Close()
 
@@ -37,7 +36,7 @@ func Products(path string) ([]ProductInput, error) {
 
 	records, err := reader.ReadAll()
 	if err != nil {
-		log.Fatal("Error reading csv: %w", err)
+		return nil, fmt.Errorf("read products csv: %w", err)
 	}
 
 	products := make([]ProductInput, 0, len(records))

@@ -3,7 +3,6 @@ package csv
 import (
 	"encoding/csv"
 	"fmt"
-	"log"
 	"os"
 )
 
@@ -27,7 +26,7 @@ func ProductMeta(path string) ([]ProductMetaInput, error) {
 
 	file, err := os.Open(path)
 	if err != nil {
-		log.Fatal("Error opening file: %w", err)
+		return nil, fmt.Errorf("open product metadata csv: %w", err)
 	}
 	defer file.Close()
 
@@ -35,7 +34,7 @@ func ProductMeta(path string) ([]ProductMetaInput, error) {
 
 	records, err := reader.ReadAll()
 	if err != nil {
-		log.Fatal("Error reading csv: %w", err)
+		return nil, fmt.Errorf("read product metadata csv: %w", err)
 	}
 
 	product_metas := make([]ProductMetaInput, 0, len(records))

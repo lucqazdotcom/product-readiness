@@ -3,7 +3,6 @@ package csv
 import (
 	"encoding/csv"
 	"fmt"
-	"log"
 	"os"
 )
 
@@ -24,7 +23,7 @@ type InventoryInput struct {
 func Inventory(path string) ([]InventoryInput, error) {
 	file, err := os.Open(path)
 	if err != nil {
-		log.Fatal("Error opening file: %w", err)
+		return nil, fmt.Errorf("open inventory csv: %w", err)
 	}
 	defer file.Close()
 
@@ -32,7 +31,7 @@ func Inventory(path string) ([]InventoryInput, error) {
 
 	records, err := reader.ReadAll()
 	if err != nil {
-		log.Fatal("Error reading csv: %w", err)
+		return nil, fmt.Errorf("read inventory csv: %w", err)
 	}
 
 	inventories := make([]InventoryInput, 0, len(records))

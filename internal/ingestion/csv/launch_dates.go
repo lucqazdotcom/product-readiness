@@ -3,7 +3,6 @@ package csv
 import (
 	"encoding/csv"
 	"fmt"
-	"log"
 	"os"
 )
 
@@ -17,7 +16,7 @@ func Launch_dates(path string) ([]DateInput, error) {
 
 	file, err := os.Open(path)
 	if err != nil {
-		log.Fatal("Error opening file: %w", err)
+		return nil, fmt.Errorf("open launch dates csv: %w", err)
 	}
 	defer file.Close()
 
@@ -25,7 +24,7 @@ func Launch_dates(path string) ([]DateInput, error) {
 
 	records, err := reader.ReadAll()
 	if err != nil {
-		log.Fatal("Error reading csv: %w", err)
+		return nil, fmt.Errorf("read launch dates csv: %w", err)
 	}
 
 	dates := make([]DateInput, 0, len(records))
