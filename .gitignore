@@ -46,3 +46,4 @@ docker-compose.override.yml
 
 # macOS
 .DS_Store
+notes.md

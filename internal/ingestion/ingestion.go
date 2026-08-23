@@ -2,47 +2,42 @@ package ingestion
 
 import (
 	"fmt"
-	"log"
 	"path/filepath"
 	csv "product-readiness/internal/ingestion/csv"
 )
 
+type Feed struct {
+	Name     string
+	FileName string
+}
+
 type IngestionOutput struct {
-	data []string
+	FeedName string
+	Records  [][]string
 }
 
 func Ingestion(dataDir string) error {
 
-	products, err := csv.Products(filepath.Join(dataDir, "product_data.csv"))
-	if err != nil {
-		log.Fatal("failed to run products ingestion: %w", err)
+	feeds := []Feed{
+		{Name: "product", FileName: "product_data.csv"},
+		{Name: "product_metas", FileName: "product_descriptions.csv"},
+		{Name: "images", FileName: "images.csv"},
+		{Name: "inventory", FileName: "inventory.csv"},
+		{Name: "launch_dates", FileName: "launch_dates.csv"},
 	}
 
-	product_metas, err := csv.ProductMeta(filepath.Join(dataDir, "product_descriptions.csv"))
-	if err != nil {
-		log.Fatal("failed to run product metadata ingestion: %w", err)
+	for _, feed := range feeds {
+		records, err := csv.CsvReader(filepath.Join(dataDir, feed.FileName))
+		if err != nil {
+			fmt.Errorf("failed to run %s ingestion: %w", feed.Name, err)
+		}
+
+		data := IngestionOutput{
+			FeedName: feed.Name,
+			Records:  records,
+		}
+		// fmt.Println(data)
+		// fmt.Printf("loaded %d %s's \n", len(records), feed.Name)
 	}
-
-	images, err := csv.Images(filepath.Join(dataDir, "images.csv"))
-	if err != nil {
-		log.Fatal("failed to run images ingestion: %w", err)
-	}
-
-	inventory, err := csv.Inventory(filepath.Join(dataDir, "inventory.csv"))
-	if err != nil {
-		log.Fatal("failed to run inventory ingestion: %w", err)
-	}
-
-	launch_dates, err := csv.Launch_dates(filepath.Join(dataDir, "launch_dates.csv"))
-	if err != nil {
-		log.Fatal("failed to run launch dates ingestion: %w", err)
-	}
-
-	fmt.Printf("loaded %d products \n", len(products))
-	fmt.Printf("loaded %d product metadata \n", len(product_metas))
-	fmt.Printf("loaded %d images \n", len(images))
-	fmt.Printf("loaded %d inventory \n", len(inventory))
-	fmt.Printf("loaded %d launch_dates \n", len(launch_dates))
-
 	return nil
 }
