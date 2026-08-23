@@ -1,9 +1,7 @@
 package csv
 
 import (
-	"encoding/csv"
 	"fmt"
-	"os"
 )
 
 type InventoryInput struct {
@@ -21,15 +19,8 @@ type InventoryInput struct {
 }
 
 func Inventory(path string) ([]InventoryInput, error) {
-	file, err := os.Open(path)
-	if err != nil {
-		return nil, fmt.Errorf("open inventory csv: %w", err)
-	}
-	defer file.Close()
 
-	reader := csv.NewReader(file)
-
-	records, err := reader.ReadAll()
+	records, err := CsvReader(path)
 	if err != nil {
 		return nil, fmt.Errorf("read inventory csv: %w", err)
 	}

@@ -1,9 +1,7 @@
 package csv
 
 import (
-	"encoding/csv"
 	"fmt"
-	"os"
 )
 
 type ProductInput struct {
@@ -26,15 +24,7 @@ type ProductInput struct {
 
 func Products(path string) ([]ProductInput, error) {
 
-	file, err := os.Open(path)
-	if err != nil {
-		return nil, fmt.Errorf("open products csv: %w", err)
-	}
-	defer file.Close()
-
-	reader := csv.NewReader(file)
-
-	records, err := reader.ReadAll()
+	records, err := CsvReader(path)
 	if err != nil {
 		return nil, fmt.Errorf("read products csv: %w", err)
 	}

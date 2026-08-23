@@ -1,9 +1,7 @@
 package csv
 
 import (
-	"encoding/csv"
 	"fmt"
-	"os"
 )
 
 type DateInput struct {
@@ -14,15 +12,7 @@ type DateInput struct {
 
 func Launch_dates(path string) ([]DateInput, error) {
 
-	file, err := os.Open(path)
-	if err != nil {
-		return nil, fmt.Errorf("open launch dates csv: %w", err)
-	}
-	defer file.Close()
-
-	reader := csv.NewReader(file)
-
-	records, err := reader.ReadAll()
+	records, err := CsvReader(path)
 	if err != nil {
 		return nil, fmt.Errorf("read launch dates csv: %w", err)
 	}

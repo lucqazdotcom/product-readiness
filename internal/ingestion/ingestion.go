@@ -5,11 +5,13 @@ import (
 	"log"
 	"path/filepath"
 	csv "product-readiness/internal/ingestion/csv"
-	"time"
 )
 
+type IngestionOutput struct {
+	data []string
+}
+
 func Ingestion(dataDir string) error {
-	startNow := time.Now()
 
 	products, err := csv.Products(filepath.Join(dataDir, "product_data.csv"))
 	if err != nil {
@@ -41,8 +43,6 @@ func Ingestion(dataDir string) error {
 	fmt.Printf("loaded %d images \n", len(images))
 	fmt.Printf("loaded %d inventory \n", len(inventory))
 	fmt.Printf("loaded %d launch_dates \n", len(launch_dates))
-
-	fmt.Println("Operation took:", time.Since(startNow))
 
 	return nil
 }

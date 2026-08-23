@@ -1,9 +1,7 @@
 package csv
 
 import (
-	"encoding/csv"
 	"fmt"
-	"os"
 )
 
 type ImageInput struct {
@@ -20,15 +18,8 @@ type ImageInput struct {
 }
 
 func Images(path string) ([]ImageInput, error) {
-	file, err := os.Open(path)
-	if err != nil {
-		return nil, fmt.Errorf("open image csv: %w", err)
-	}
-	defer file.Close()
 
-	reader := csv.NewReader(file)
-
-	records, err := reader.ReadAll()
+	records, err := CsvReader(path)
 	if err != nil {
 		return nil, fmt.Errorf("read image csv: %w", err)
 	}
