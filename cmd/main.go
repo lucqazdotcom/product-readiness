@@ -1,14 +1,15 @@
 package main
 
 import (
-	"log"
-	ingestion "product-readiness/internal/ingestion"
+	api "product-readiness/internal/api"
 )
 
 func main() {
 
-	if err := ingestion.Ingestion("testdata"); err != nil {
-		log.Fatal(err)
-	}
+	api.Api()
+
+	// if err := ingestion.Ingestion("testdata"); err != nil {
+	// 	log.Fatal(err)
+	// }
 
 }

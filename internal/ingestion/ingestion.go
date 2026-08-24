@@ -16,7 +16,7 @@ type IngestionOutput struct {
 	Records  [][]string
 }
 
-func Ingestion(dataDir string) error {
+func Ingestion(dataDir string) (IngestionOutput, error) {
 
 	feeds := []Feed{
 		{Name: "product", FileName: "product_data.csv"},
@@ -36,6 +36,9 @@ func Ingestion(dataDir string) error {
 			FeedName: feed.Name,
 			Records:  records,
 		}
+
+		return data, err
+
 		// fmt.Println(data)
 		// fmt.Printf("loaded %d %s's \n", len(records), feed.Name)
 	}
