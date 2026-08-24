@@ -1,39 +1,39 @@
 package csv
 
 import (
-	"encoding/csv"
 	"fmt"
-	"log"
-	"os"
 )
 
 type ProductInput struct {
-	UPC      string
-	Name     string
-	Brand    string
-	Category string
+	SKU            string
+	Name           string
+	Brand          string
+	Category       string
+	Subcategory    string
+	Colour         string
+	Size           string
+	Unit_price_cad string
+	Cost_cad       string
+	Currency       string
+	Taxable        string
+	Status         string
+	Supplier_id    string
+	Created_at     string
+	Updated_at     string
 }
 
 func Products(path string) ([]ProductInput, error) {
 
-	file, err := os.Open(path)
+	records, err := CsvReader(path)
 	if err != nil {
-		log.Fatal("Error opening file: %w", err)
-	}
-	defer file.Close()
-
-	reader := csv.NewReader(file)
-
-	records, err := reader.ReadAll()
-	if err != nil {
-		log.Fatal("Error reading csv: %w", err)
+		return nil, fmt.Errorf("read products csv: %w", err)
 	}
 
 	products := make([]ProductInput, 0, len(records))
 
 	for rowIndex, row := range records {
 
-		const expectedColumns = 4
+		const expectedColumns = 16
 
 		if len(row) != expectedColumns {
 			return nil, fmt.Errorf(
@@ -45,10 +45,21 @@ func Products(path string) ([]ProductInput, error) {
 		}
 
 		product := ProductInput{
-			UPC:      row[0],
-			Name:     row[1],
-			Brand:    row[2],
-			Category: row[3],
+			SKU:            row[0],
+			Name:           row[1],
+			Brand:          row[2],
+			Category:       row[3],
+			Subcategory:    row[4],
+			Colour:         row[5],
+			Size:           row[6],
+			Unit_price_cad: row[7],
+			Cost_cad:       row[8],
+			Currency:       row[9],
+			Taxable:        row[10],
+			Status:         row[11],
+			Supplier_id:    row[12],
+			Created_at:     row[13],
+			Updated_at:     row[14],
 		}
 
 		products = append(products, product)

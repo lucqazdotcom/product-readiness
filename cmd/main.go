@@ -1,19 +1,15 @@
 package main
 
 import (
-	"fmt"
-	"log"
-	csv "product-readiness/internal/ingestion/csv"
+	api "product-readiness/internal/api"
 )
 
 func main() {
-	fmt.Println("hello")
-	products, err := csv.Products("testdata/product_data.csv")
 
-	if err != nil {
-		log.Fatal("failed to run csv products: %w", err)
-	}
+	api.Api()
 
-	fmt.Printf("loaded %d products \n", len(products))
+	// if err := ingestion.Ingestion("testdata"); err != nil {
+	// 	log.Fatal(err)
+	// }
 
 }
