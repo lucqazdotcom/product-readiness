@@ -16,7 +16,7 @@ type IngestionOutput struct {
 	Records  [][]string
 }
 
-func Ingestion(dataDir string) (IngestionOutput, error) {
+func Ingestion(dataDir string) ([]IngestionOutput, error) {
 
 	feeds := []Feed{
 		{Name: "product", FileName: "product_data.csv"},
@@ -25,6 +25,8 @@ func Ingestion(dataDir string) (IngestionOutput, error) {
 		{Name: "inventory", FileName: "inventory.csv"},
 		{Name: "launch_dates", FileName: "launch_dates.csv"},
 	}
+
+	outputs := []IngestionOutput{}
 
 	for _, feed := range feeds {
 		records, err := csv.CsvReader(filepath.Join(dataDir, feed.FileName))
@@ -37,10 +39,10 @@ func Ingestion(dataDir string) (IngestionOutput, error) {
 			Records:  records,
 		}
 
-		return data, err
+		outputs = append(outputs, data)
 
-		// fmt.Println(data)
-		// fmt.Printf("loaded %d %s's \n", len(records), feed.Name)
+		fmt.Printf("loaded %d %s's \n", len(records), feed.Name)
 	}
-	return nil
+
+	return outputs, nil
 }
