@@ -6,6 +6,7 @@ import (
 	"os"
 
 	"github.com/jackc/pgx/v5"
+	"github.com/jackc/pgx/v5/pgxpool"
 )
 
 type Images struct {
@@ -73,6 +74,10 @@ type Products struct {
 	Supplier_id    string
 	Created_at     string
 	Updated_at     string
+}
+
+type Pool struct {
+	pool *pgxpool.Pool
 }
 
 func Db() {
