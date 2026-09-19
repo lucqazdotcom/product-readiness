@@ -79,7 +79,12 @@ type Pool struct {
 	pool *pgxpool.Pool
 }
 
-func Db() {
+type Test struct {
+	ID   int
+	Name string
+}
+
+func NewPool(ctx context.Context) (*Pool, error) {
 	connStr := fmt.Sprintf(
 		"postgresql://%s:%s@%s:%s/%s",
 		os.Getenv("POSTGRES_USER"),
@@ -87,27 +92,68 @@ func Db() {
 		os.Getenv("POSTGRES_HOST"),
 		os.Getenv("POSTGRES_PORT"),
 		os.Getenv("POSTGRES_DB"))
-	pool, err := pgxpool.New(context.Background(), connStr)
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Unable to connect to database: %v\n", err)
-		os.Exit(1)
-	}
-	defer pool.Close()
 
-	rows, err := pool.Query(context.Background(), "select * from test")
+	pool, err := pgxpool.New(ctx, connStr)
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "QueryRow failed: %v\n", err)
-		os.Exit(1)
+		return nil, fmt.Errorf("Create pool error %w", err)
 	}
+
+	if err := pool.Ping(ctx); err != nil {
+		pool.Close()
+		return nil, fmt.Errorf("Connect to database %w", err)
+	}
+
+	return &Pool{pool: pool}, nil
+}
+
+func (p *Pool) Close() {
+	p.pool.Close()
+}
+
+func (p *Pool) AddTest(ctx context.Context, name string) (Test, error) {
+	var test Test
+
+	err := p.pool.QueryRow(
+		ctx,
+		`INSERT INTO test (name)
+		VALUES ($1)
+		RETURNING id, name`,
+		name,
+	).Scan(&test.ID, &test.Name)
+
+	if err != nil {
+		return test, fmt.Errorf("Insert test %w", err)
+	}
+
+	return test, nil
+
+}
+
+func (p *Pool) ListTest(ctx context.Context) ([]Test, error) {
+	rows, err := p.pool.Query(
+		ctx,
+		`SELECT * FROM test`,
+	)
+	defer rows.Close()
+
+	if err != nil {
+		return nil, fmt.Errorf("List test %w", err)
+	}
+
+	var tests []Test
 
 	for rows.Next() {
-		var id string
-		var name string
-
-		if err = rows.Scan(&id, &name); err != nil {
-			fmt.Println("error")
+		var test Test
+		if err := rows.Scan(&test.ID, &test.Name); err != nil {
+			return nil, fmt.Errorf("scanning rows %w", err)
 		}
 
-		fmt.Println(id, name)
+		tests = append(tests, test)
 	}
+
+	if err := rows.Err(); err != nil {
+		return nil, fmt.Errorf("iterate rows %w", err)
+	}
+
+	return tests, nil
 }
