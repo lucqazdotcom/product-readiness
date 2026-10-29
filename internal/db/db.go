@@ -4,75 +4,78 @@ import (
 	"context"
 	"fmt"
 	"os"
+	"time"
 
+	"github.com/jackc/pgx/v5/pgtype"
 	"github.com/jackc/pgx/v5/pgxpool"
 )
 
-type Images struct {
-	ID         string
-	SKU        string
-	Image_url  string
-	Image_role string
-	Sort_order string
-	Alt_text   string
-	Width_px   string
-	Height_px  string
-	Is_active  string
-	Updated_at string
+type Image struct {
+	ID        string
+	SKU       string
+	ImageUrl  *string
+	ImageRole *string
+	SortOrder *int32
+	AltText   *string
+	WidthPx   *int32
+	HeightPx  *int32
+	IsActive  *bool
+	UpdatedAt *time.Time
 }
 
-type Iventory struct {
-	Inventory_record_id string
-	SKU                 string
-	Warehouse_code      string
-	On_hand_qty         string
-	Reserved_qty        string
-	Available_qty       string
-	Reorder_point       string
-	Backorder_allowed   string
-	Inventory_status    string
-	Last_counted_at     string
-	Feed_updated_at     string
+type Inventory struct {
+	InventoryRecordID string
+	SKU               string
+	WarehouseCode     string
+	OnHandQty         *int32
+	ReservedQty       *int32
+	AvailableQty      *int32
+	ReorderPoint      *int32
+	BackorderAllowed  *bool
+	InventoryStatus   *string
+	LastCountedAt     *time.Time
+	FeedUpdatedAt     *time.Time
 }
 
-type DateInput struct {
-	SKU         string
-	Launch_week string
-	Launch_date string
+type LaunchDate struct {
+	UPC        string
+	LaunchWeek *string
+	LaunchDate *time.Time
 }
 
 type ProductMetaData struct {
-	Record_id         string
-	SKU               string
-	Locale            string
-	Short_desc        string
-	Long_desc         string
-	Material          string
-	Care_instructions string
-	Bullet_1          string
-	Bullet_2          string
-	Seo_title         string
-	Seo_description   string
-	Approval_status   string
-	Updated_at        string
+	RecordID         string
+	SKU              string
+	Locale           string
+	ShortDesc        *string
+	LongDesc         *string
+	Material         *string
+	CareInstructions *string
+	Bullet1          *string
+	Bullet2          *string
+	SEOTitle         *string
+	SEODescription   *string
+	ApprovalStatus   *string
+	UpdatedAt        *time.Time
 }
 
-type Products struct {
-	SKU            string
-	Name           string
-	Brand          string
-	Category       string
-	Subcategory    string
-	Colour         string
-	Size           string
-	Unit_price_cad string
-	Cost_cad       string
-	Currency       string
-	Taxable        string
-	Status         string
-	Supplier_id    string
-	Created_at     string
-	Updated_at     string
+type Product struct {
+	SKU         string
+	UPC         string
+	Name        *string
+	Brand       *string
+	Category    *string
+	Subcategory *string
+	Color       *string
+	Size        *string
+	UnitPrice   pgtype.Numeric
+	CostPrice   pgtype.Numeric
+	Currency    *string
+	Taxable     *bool
+	Status      *string
+	SupplierID  *string
+	CreatedAt   *time.Time
+	UpdatedAt   *time.Time
 }
 
 type Pool struct {
@@ -110,6 +113,59 @@ func (p *Pool) Close() {
 	p.pool.Close()
 }
 
+func (p *Pool) UpsertProduct(ctx context.Context, product Product) error {
+	_, err := p.pool.Exec(
+		ctx,
+		`INSERT INTO products (
+			sku, upc, product_name, brand, category, subcategory,
+			color, size, unit_price, cost_price, currency,
+			taxable, status, supplier_id, created_at, updated_at
+		)
+		VALUES (
+			$1, $2, $3, $4, $5, $6, $7, $8,
+			$9, $10, $11, $12, $13, $14, $15, $16
+		)
+		ON CONFLICT (sku) DO UPDATE SET
+			upc = EXCLUDED.upc,
+			product_name = EXCLUDED.product_name,
+			brand = EXCLUDED.brand,
+			category = EXCLUDED.category,
+			subcategory = EXCLUDED.subcategory,
+			color = EXCLUDED.color,
+			size = EXCLUDED.size,
+			unit_price = EXCLUDED.unit_price,
+			cost_price = EXCLUDED.cost_price,
+			currency = EXCLUDED.currency,
+			taxable = EXCLUDED.taxable,
+			status = EXCLUDED.status,
+			supplier_id = EXCLUDED.supplier_id,
+			created_at = EXCLUDED.created_at,
+			updated_at = EXCLUDED.updated_at`,
+
+		product.SKU,
+		product.UPC,
+		product.Name,
+		product.Brand,
+		product.Category,
+		product.Subcategory,
+		product.Color,
+		product.Size,
+		product.UnitPrice,
+		product.CostPrice,
+		product.Currency,
+		product.Taxable,
+		product.Status,
+		product.SupplierID,
+		product.CreatedAt,
+		product.UpdatedAt,
+	)
+
+	if err != nil {
+		return fmt.Errorf("upsert product %s: %w", product.SKU, err)
+	}
+	return nil
+}
+
 func (p *Pool) AddTest(ctx context.Context, name string) (Test, error) {
 	var test Test
 
@@ -134,11 +190,12 @@ func (p *Pool) ListTest(ctx context.Context) ([]Test, error) {
 		ctx,
 		`SELECT * FROM test`,
 	)
-	defer rows.Close()
 
 	if err != nil {
 		return nil, fmt.Errorf("List test %w", err)
 	}
+
+	defer rows.Close()
 
 	var tests []Test
 

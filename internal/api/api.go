@@ -3,15 +3,18 @@ package api
 import (
 	"log"
 	"net/http"
+	"product-readiness/internal/db"
 	i "product-readiness/internal/ingestion"
 	"time"
 )
 
-func Api() {
+func Api(database *db.Pool) {
 
 	mux := http.NewServeMux()
 
-	mux.HandleFunc("GET /ingestion", ingestionFeedHandler)
+	mux.HandleFunc("GET /ingestion", func(w http.ResponseWriter, r *http.Request) {
+		ingestionFeedHandler(w, r, database)
+	})
 	mux.HandleFunc("GET /health", healthHandler)
 
 	server := &http.Server{
@@ -31,8 +34,13 @@ func Api() {
 
 // NOTE: Endpoint for ingestion polling after intial startup call to
 // simulate an existing pipeline
-func ingestionFeedHandler(w http.ResponseWriter, r *http.Request) {
-	i.Ingestion("testdata")
+func ingestionFeedHandler(w http.ResponseWriter, r *http.Request, database *db.Pool) {
+	_, err := i.Ingestion(r.Context(), "testdata", database)
+	if err != nil {
+		log.Printf("ingestion failed: %v", err)
+		http.Error(w, "ingestion failed", http.StatusInternalServerError)
+		return
+	}
 	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(http.StatusOK)
 	w.Write([]byte(`{"status": "Complete"}`))

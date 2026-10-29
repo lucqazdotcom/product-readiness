@@ -1,10 +1,9 @@
 package main
 
 import (
-	// api "product-readiness/internal/api"
 	"context"
-	"fmt"
 	"log"
+	api "product-readiness/internal/api"
 	db "product-readiness/internal/db"
 	"time"
 )
@@ -20,23 +19,37 @@ func main() {
 	}
 	defer database.Close()
 
-	test, err := database.AddTest(context.Background(), "another row")
-	if err != nil {
-		log.Fatal(err)
-	}
-	defer database.Close()
+	// name := "Test product"
+	//
+	// product := db.Product{
+	// 	SKU:  "TEST-SKU-001",
+	// 	UPC:  "TEST-UPC-001",
+	// 	Name: &name,
+	// }
+	//
+	// if err := database.UpsertProduct(ctx, product); err != nil {
+	// 	log.Fatal(err)
+	// }
+	//
+	// fmt.Println("Product saved")
 
-	fmt.Printf("test id: %v, test name: %v", test.ID, test.Name)
+	// test, err := database.AddTest(context.Background(), "another row")
+	// if err != nil {
+	// 	log.Fatal(err)
+	// }
+	// defer database.Close()
+	//
+	// fmt.Printf("test id: %v, test name: %v", test.ID, test.Name)
+	//
+	// tests, err := database.ListTest(context.Background())
+	// if err != nil {
+	// 	log.Fatal(err)
+	// }
+	// defer database.Close()
+	//
+	// fmt.Printf("tests: %+v\n", tests)
 
-	tests, err := database.ListTest(context.Background())
-	if err != nil {
-		log.Fatal(err)
-	}
-	defer database.Close()
-
-	fmt.Printf("tests", tests)
-
-	// api.Api()
+	api.Api(database)
 
 	// if err := ingestion.Ingestion("testdata"); err != nil {
 	// 	log.Fatal(err)
